@@ -202,10 +202,10 @@ var UIController = ( function() {
             // Create HTML string with placeholder text
             if (type === 'inc') {
                 element = DOMstrings.incomeContainer;
-                html = '<div class="item clearfix" id="inc-%id%"><div class="item__description">%description%</div><div class="right clearfix"><div class="item__value">%value%</div><div class="item__delete"><button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button></div></div></div>';
+                html = '<div class="item clearfix" id="inc-%id%"><div class="item__description">%description%</div><div class="right clearfix"><div class="item__value">%value%</div><div class="item__delete"><button class="item__delete--btn">-</button></div></div></div>';
             } else if (type === 'exp') {
                 element = DOMstrings.expensesContainer;
-                html = '<div class="item clearfix" id="exp-%id%"><div class="item__description">%description%</div><div class="right clearfix"><div class="item__value">%value%</div><div class="item__percentage">21%</div><div class="item__delete"><button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button></div></div></div>';
+                html = '<div class="item clearfix" id="exp-%id%"><div class="item__description">%description%</div><div class="right clearfix"><div class="item__value">%value%</div><div class="item__percentage">21%</div><div class="item__delete"><button class="item__delete--btn">-</button></div></div></div>';
             }
 
             // Replace placeholder text with actual data
@@ -372,7 +372,7 @@ var controller = ( function(budgetCtrl, UICtrl) { // diff names to use them once
     var ctrlDeleteItem = function(event) { // we need `event` to know what the target el is
         var itemID, splitID, type, ID;
         // traversing DOM structure using `parentNode` and grab `id` value
-        itemID = event.target.parentNode.parentNode.parentNode.parentNode.id; // `target` property of `event` shows us an el where event was fired
+        itemID = event.target.parentNode.parentNode.parentNode.id; // `target` property of `event` shows us an el where event was fired
 
         if (itemID) { // will be coehrced to TRUE if exists.
 
